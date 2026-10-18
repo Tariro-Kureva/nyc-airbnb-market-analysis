@@ -5,6 +5,9 @@
 I built this Tableau dashboard to explore Airbnb listings across New York City's five boroughs using an Inside Airbnb snapshot from June 2026.
 
 I wanted to understand how listing prices, minimum-stay requirements, and guest-review activity differ across the city.
+## Dashboard Preview
+
+![NYC Airbnb Tableau Dashboard](nyc-airbnb-dashboard.png)
 
 ## Key Findings
 
