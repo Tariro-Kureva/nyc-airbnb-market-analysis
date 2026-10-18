@@ -21,7 +21,7 @@ I wanted to understand how listing prices, minimum-stay requirements, and guest-
 
 Explore the interactive dashboard on Tableau Public:
 
-[View the NYC Airbnb Dashboard](https://public.tableau.com/app/profile/tariro.kureva/viz/NYCAirbnbDashboard-TariroKureva/NYCAirbnbDashboard?publish=yes)
+[View the NYC Airbnb Dashboard](https://public.tableau.com/app/profile/tariro.kureva/viz/NYCAirbnbWhereCanHostsStillEarn/NYCAirbnbDashboard)
 
 ## Tools Used
 
