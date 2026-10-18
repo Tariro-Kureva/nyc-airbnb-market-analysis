@@ -1,0 +1,427 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tariro Kureva</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tariro Kureva — Business, Data & BI Analyst. Portfolio of analytics, machine learning and dashboard projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: field-log portfolio — a single reading column with a wide project grid; real metrics set as specimen tags */
+:root{
+  --bg:#F2F5F3;
+  --surface:#FFFFFF;
+  --fg:#13201C;
+  --muted:#55655F;
+  --line:#D5DED9;
+  --accent:#0E6B5A;      /* malachite */
+  --accent-soft:#DCEEE8;
+  --ochre:#A86A12;
+  --font-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body:"Public Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1412; --surface:#141E1B; --fg:#E3ECE8; --muted:#9AADA6; --line:#26352F;
+    --accent:#4FC2A5; --accent-soft:#163A31; --ochre:#E0A64A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1412; --surface:#141E1B; --fg:#E3ECE8; --muted:#9AADA6; --line:#26352F;
+  --accent:#4FC2A5; --accent-soft:#163A31; --ochre:#E0A64A; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:var(--font-body); font-size:1rem; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-0.01em}
+.label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:var(--fg);text-decoration:none}
+.brand span{color:var(--accent)}
+nav ul{display:flex;gap:4px 18px;list-style:none;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+nav a:hover{color:var(--fg)}
+@media (max-width:640px){ nav li.opt{display:none} }
+
+/* Hero */
+.hero{padding-block:72px 48px}
+.hero .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.hero h1{font-size:clamp(2.6rem, 7vw, 5.2rem);font-weight:800;line-height:.98}
+.hero .role{font-family:var(--font-display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.65rem);color:var(--muted);margin-top:14px}
+.hero .role b{color:var(--fg);font-weight:700}
+.hero p.lede{max-width:62ch;font-size:1.08rem;margin:24px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);transition:transform .15s ease, background .15s ease}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.ghost{color:var(--accent);background:transparent}
+.btn:hover{transform:translateY(-1px)}
+
+/* Specimen tags — the signature element */
+.tags{display:grid;grid-template-columns:repeat(5, minmax(0,1fr));margin-top:52px;border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden}
+.tag{padding:16px 18px;border-right:1px dashed var(--line);position:relative;min-width:0}
+.tag:last-child{border-right:0}
+.tag::before{content:"";position:absolute;left:18px;top:0;width:28px;height:3px;background:var(--ochre)}
+.tag .n{font-family:var(--font-mono);font-size:clamp(1.3rem,2.4vw,1.75rem);font-weight:500;display:block;margin-top:6px;font-variant-numeric:tabular-nums}
+.tag .d{font-size:.82rem;color:var(--muted);line-height:1.35;display:block;margin-top:2px}
+.tag .id{font-family:var(--font-mono);font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+@media (max-width:860px){.tags{grid-template-columns:repeat(2,minmax(0,1fr))} .tag{border-bottom:1px dashed var(--line)} .tag:nth-child(2n){border-right:0} .tag:last-child{grid-column:1 / -1;border-bottom:0}}
+
+/* Sections */
+section{padding-block:56px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:28px;border-top:2px solid var(--fg);padding-top:16px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:700}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 .82rem var(--font-body);padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:hover{border-color:var(--fg)}
+
+/* Projects */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .15s ease, transform .15s ease}
+.proj:hover{border-color:var(--accent);transform:translateY(-2px)}
+.proj.feature{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:620px){.proj.feature{grid-column:auto;grid-template-columns:1fr}}
+.proj .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cat{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px}
+.new{font-family:var(--font-mono);font-size:.7rem;color:var(--ochre);letter-spacing:.06em;text-transform:uppercase}
+.proj h3{font-size:1.25rem;font-weight:700;line-height:1.2}
+.proj.feature h3{font-size:1.6rem}
+.proj p{margin:0;color:var(--muted);font-size:.94rem}
+.metric{display:flex;align-items:baseline;gap:10px;border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+.metric .v{font-family:var(--font-mono);font-size:1.6rem;font-weight:500;color:var(--fg);font-variant-numeric:tabular-nums;white-space:nowrap}
+.metric .k{font-size:.82rem;color:var(--muted);line-height:1.3}
+.stack{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.stack li{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);border:1px solid var(--line);padding:2px 7px;border-radius:4px}
+.proj a.go{font-weight:600;font-size:.9rem;text-decoration:none}
+.proj a.go:hover{text-decoration:underline}
+.findings{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.findings li{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:12px;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:10px;font-size:.9rem;color:var(--muted)}
+.findings li:last-child{border-bottom:0}
+.findings b{font-family:var(--font-mono);font-weight:500;color:var(--fg);font-size:1.1rem;font-variant-numeric:tabular-nums}
+
+/* Experience */
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding-block:24px;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job .when{font-family:var(--font-mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.job .when span{display:block;margin-top:4px}
+.job h3{font-size:1.2rem;font-weight:700}
+.job .org{color:var(--accent);font-weight:600;font-size:.95rem;margin-top:2px}
+.job ul{margin:12px 0 0;padding-left:1.1rem;color:var(--muted);max-width:70ch}
+.job li{margin-bottom:6px}
+.job li::marker{color:var(--ochre)}
+@media (max-width:700px){.job{grid-template-columns:1fr;gap:8px}}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 40px}
+@media (max-width:700px){.skills{grid-template-columns:1fr}}
+.skillgroup h3{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pills li{background:var(--surface);border:1px solid var(--line);padding:5px 11px;border-radius:999px;font-size:.88rem}
+
+/* Education */
+.edu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.edu{grid-template-columns:1fr}}
+.school{border-left:3px solid var(--accent);padding:4px 0 4px 16px;min-width:0}
+.school .yr{font-family:var(--font-mono);font-size:.8rem;color:var(--muted)}
+.school h3{font-size:1.08rem;font-weight:700;margin-top:4px;line-height:1.3}
+.school p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+.school .gpa{font-family:var(--font-mono);font-size:.82rem;color:var(--fg);margin-top:6px;display:inline-block}
+.twocol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:40px}
+@media (max-width:760px){.twocol{grid-template-columns:1fr}}
+.twocol h3{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:12px}
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plain li{font-size:.95rem;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.plain li span{display:block;color:var(--muted);font-size:.85rem}
+
+/* Contact */
+.contact{background:var(--fg);color:var(--bg);border-radius:10px;padding:clamp(28px,5vw,52px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:760px){.contact{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--bg)}
+.contact p{color:color-mix(in srgb, var(--bg) 75%, var(--fg));margin:12px 0 0;max-width:48ch}
+.links{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.links li{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid color-mix(in srgb, var(--bg) 25%, var(--fg));padding-bottom:10px;min-width:0}
+.links .lk{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb, var(--bg) 60%, var(--fg));flex-shrink:0}
+.links a,.links .val{color:var(--bg);font-weight:500;text-decoration:none;overflow-wrap:anywhere;text-align:right}
+.links a:hover{text-decoration:underline}
+.copy{font:500 .75rem var(--font-mono);background:transparent;color:var(--bg);border:1px solid color-mix(in srgb, var(--bg) 40%, var(--fg));border-radius:4px;padding:3px 8px;cursor:pointer;margin-left:8px}
+.emailrow{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:4px;min-width:0}
+
+footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Tariro Kureva<span>.</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li class="opt"><a href="#skills">Skills</a></li>
+        <li class="opt"><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span class="label">Open to Business, Data &amp; BI Analyst roles · Hamden, CT</span></div>
+    <h1>Tariro Kureva</h1>
+    <p class="role"><b>Business &amp; Data Analyst</b> · Machine Learning · Business Intelligence</p>
+    <p class="lede">I turn large, messy datasets into decisions leaders can act on. I'm finishing an M.S. in Applied Artificial Intelligence &amp; Business Analytics at Quinnipiac University (4.00 GPA), and I bring field-tested data-quality discipline from earlier work in research, mining and government.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn ghost" href="https://linkedin.com/in/tariro-kureva" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+
+    <div class="tags" role="list" aria-label="Highlights">
+      <div class="tag" role="listitem"><span class="id">S-01 · CRIME</span><span class="n">99.7%</span><span class="d">precision on a crime-severity classifier</span></div>
+      <div class="tag" role="listitem"><span class="id">S-02 · RECORDS</span><span class="n">1M+</span><span class="d">police records processed into a 642K analytical set</span></div>
+      <div class="tag" role="listitem"><span class="id">S-03 · HR</span><span class="n">$5.9–11.9M</span><span class="d">turnover exposure quantified</span></div>
+      <div class="tag" role="listitem"><span class="id">S-04 · CLIMATE</span><span class="n">575</span><span class="d">disaster events across 10 countries</span></div>
+      <div class="tag" role="listitem"><span class="id">S-05 · HOUSING</span><span class="n">30,555</span><span class="d">NYC Airbnb listings analyzed</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Selected work</h2>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="chip" id="f-all" data-f="all" aria-pressed="true">All</button>
+          <button class="chip" id="f-bi" data-f="bi" aria-pressed="false">Dashboards &amp; BI</button>
+          <button class="chip" id="f-ml" data-f="ml" aria-pressed="false">Machine learning</button>
+          <button class="chip" id="f-nlp" data-f="nlp" aria-pressed="false">NLP &amp; recommenders</button>
+        </div>
+      </div>
+
+      <div class="grid" id="projects">
+        <!-- Featured -->
+        <article class="proj feature" data-cat="bi">
+          <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+            <div class="meta"><span class="cat">Tableau · Dashboard</span><span class="new">Latest</span></div>
+            <h3>NYC Airbnb: Where Can Hosts Still Earn?</h3>
+            <p>After New York's 2023 short-term rental law, how did the market reshape itself, and where is money still being made? An interactive dashboard on the June 2026 Inside Airbnb snapshot with geospatial mapping, calculated price bands and dashboard-wide cross-filtering.</p>
+            <ul class="stack"><li>Tableau</li><li>Geospatial</li><li>Calculated fields</li><li>Data storytelling</li></ul>
+            <a class="go" href="https://public.tableau.com/app/profile/tariro.kureva/viz/NYCAirbnbWhereCanHostsStillEarn/NYCAirbnbDashboard" target="_blank" rel="noopener">Explore the live dashboard ↗</a>
+          </div>
+          <ul class="findings" aria-label="Key findings">
+            <li><b>~4 in 5</b>listings now require stays of 30+ nights</li>
+            <li><b>$259</b>median entire home in Manhattan, vs $138 in the Bronx</li>
+            <li><b>28%</b>of listings have never had a guest review</li>
+            <li><b>Top 3</b>Tribeca, Greenwich Village and SoHo lead on nightly price</li>
+          </ul>
+        </article>
+
+        <article class="proj" data-cat="ml">
+          <div class="meta"><span class="cat">Predictive · Classification</span></div>
+          <h3>Seattle Crime Risk &amp; Severity Classification</h3>
+          <p>Processed 1M+ Seattle Police Department records into a 642K-record analytical dataset, engineered a severity-scoring framework, and compared models to power high-confidence automated alerts for dispatch.</p>
+          <ul class="stack"><li>Python</li><li>pandas</li><li>scikit-learn</li><li>XGBoost</li><li>Logistic Regression</li></ul>
+          <div class="metric"><span class="v">99.7%</span><span class="k">precision with the selected Logistic Regression model</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="proj" data-cat="ml">
+          <div class="meta"><span class="cat">Machine learning · Clustering</span></div>
+          <h3>IBM HR Workforce Risk Analysis</h3>
+          <p>Segmented 1,470 employee records across 35 attributes with K-Means and hierarchical clustering to find distinct attrition-risk profiles, then built a workforce-planning business case.</p>
+          <ul class="stack"><li>Python</li><li>K-Means</li><li>Hierarchical clustering</li><li>PCA</li></ul>
+          <div class="metric"><span class="v">$5.9–11.9M</span><span class="k">estimated turnover exposure</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="proj" data-cat="bi">
+          <div class="meta"><span class="cat">Power BI · Dashboard</span></div>
+          <h3>Southern Africa Extreme Disaster Events</h3>
+          <p>An interactive Power BI dashboard integrating disaster events with 1,741 climate indicators, visualizing regional risk and trends to support planning in climate-exposed regions.</p>
+          <ul class="stack"><li>Power BI</li><li>Python</li><li>pandas</li><li>Excel</li></ul>
+          <div class="metric"><span class="v">575</span><span class="k">events across 10 Southern African countries</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="proj" data-cat="ml">
+          <div class="meta"><span class="cat">Predictive · Risk</span></div>
+          <h3>Credit Default Risk Prediction</h3>
+          <p>Predictive models estimating default risk, evaluated on accuracy, precision and recall to balance business trade-offs, and surfacing the behavioral and financial drivers behind defaults.</p>
+          <ul class="stack"><li>Python</li><li>Logistic Regression</li><li>Decision Tree</li></ul>
+          <div class="metric"><span class="v">30,000</span><span class="k">credit-card clients modeled</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="proj" data-cat="nlp">
+          <div class="meta"><span class="cat">NLP · Sentiment</span></div>
+          <h3>IMDb Sentiment Analysis</h3>
+          <p>Analyzed movie reviews to surface the language patterns that drive sentiment, building and comparing NLP classification models.</p>
+          <ul class="stack"><li>Python</li><li>NLP</li><li>TF-IDF</li><li>VADER</li></ul>
+          <div class="metric"><span class="v">~86%</span><span class="k">classification accuracy</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="proj" data-cat="nlp">
+          <div class="meta"><span class="cat">Recommender system</span></div>
+          <h3>MovieLens Recommendation System</h3>
+          <p>A recommendation engine built on user-rating behavior and similarity techniques, at the scale of 270K users and 45K movies.</p>
+          <ul class="stack"><li>Python</li><li>Collaborative filtering</li></ul>
+          <div class="metric"><span class="v">26M</span><span class="k">ratings analyzed</span></div>
+          <a class="go" href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>Experience</h2><span class="label">Most recent first</span></div>
+      <ol class="timeline">
+        <li class="job">
+          <div class="when">Sept 2025 – May 2026<span>Hamden, CT</span></div>
+          <div>
+            <h3>Graduate Assistant / Poll Telephone Interviewer</h3>
+            <div class="org">Quinnipiac University Poll</div>
+            <ul>
+              <li>Conduct 150+ structured research interviews weekly, collecting and validating survey data against standardized protocols.</li>
+              <li>Run quality-control checks across 5,000+ records, catching and correcting inconsistencies before analysis.</li>
+              <li>Produce documentation and analytical summaries for faculty researchers to audit-ready, confidential standards.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Aug 2023 – Jul 2025<span>Zimbabwe</span></div>
+          <div>
+            <h3>Production Geology Sampler</h3>
+            <div class="org">Zimplats Mining Company</div>
+            <ul>
+              <li>Collected, recorded and validated 1,200+ geological samples with 100% traceability and zero documentation errors.</li>
+              <li>Maintained operational datasets and technical records in a highly regulated, data-intensive environment.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Sept 2019 – Jul 2022<span>Zimbabwe</span></div>
+          <div>
+            <h3>Program Coordinator Officer</h3>
+            <div class="org">Ministry of Youth Empowerment, Development and Vocational Training</div>
+            <ul>
+              <li>Coordinated 15+ youth development programs serving 500+ participants, owning reporting and performance tracking end to end.</li>
+              <li>Prepared monthly performance reports that informed resource allocation, working with 20+ government and community stakeholders.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>Toolkit</h2></div>
+      <div class="skills">
+        <div class="skillgroup"><h3>Business intelligence</h3><ul class="pills"><li>Power BI</li><li>Tableau</li><li>Dashboard development</li><li>KPI reporting</li><li>Data storytelling</li></ul></div>
+        <div class="skillgroup"><h3>Analytics &amp; programming</h3><ul class="pills"><li>Python</li><li>SQL</li><li>R</li><li>pandas</li><li>Excel</li><li>Exploratory analysis</li><li>Data cleaning</li></ul></div>
+        <div class="skillgroup"><h3>Machine learning &amp; AI</h3><ul class="pills"><li>Logistic Regression</li><li>XGBoost</li><li>Random Forest</li><li>K-Means</li><li>PCA</li><li>NLP</li><li>TF-IDF</li><li>Sentence Transformers</li></ul></div>
+        <div class="skillgroup"><h3>Tools &amp; platforms</h3><ul class="pills"><li>Git / GitHub</li><li>Jupyter</li><li>SAS</li><li>Sage ERP</li><li>Microsoft Office</li><li>Citrix</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head"><h2>Education</h2></div>
+      <div class="edu">
+        <div class="school"><span class="yr">2026</span><h3>M.S., Applied Artificial Intelligence &amp; Business Analytics</h3><p>Quinnipiac University, School of Business · Hamden, CT</p><span class="gpa">GPA 4.00</span></div>
+        <div class="school"><span class="yr">2023</span><h3>M.A., Disaster Risk Reduction &amp; Management Systems</h3><p>University of Zimbabwe</p><span class="gpa">GPA 3.40</span></div>
+        <div class="school"><span class="yr">2020</span><h3>B.Sc. (Hons), Development Studies</h3><p>Bindura University of Science Education, Zimbabwe</p><span class="gpa">GPA 3.60</span></div>
+      </div>
+      <div class="twocol">
+        <div>
+          <h3>Certifications</h3>
+          <ul class="plain">
+            <li>Elements of AI<span>University of Helsinki &amp; MinnaLearn</span></li>
+            <li>Diploma in Data Analytics<span>UniAthena</span></li>
+            <li>Intro to SQL<span>Kaggle</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Activities &amp; leadership</h3>
+          <ul class="plain">
+            <li>Women Empowered<span>Gender-equity initiatives and professional development programming</span></li>
+            <li>Student Philanthropy Council<span>Fundraising strategy, grant allocation and impact assessment</span></li>
+            <li>Graduate Business Society<span>Case competitions, networking and skill-building workshops</span></li>
+            <li>Student Programming Board<span>Planning cross-team student engagement events</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk data.</h2>
+          <p>I'm looking for Business Analyst, Data Analyst and BI Analyst roles starting in 2026. If you're hiring or want to talk through a project, I'd love to hear from you.</p>
+        </div>
+        <ul class="links">
+          <li><span class="lk">Email</span><span class="emailrow"><span class="val" id="email">tarirokureva7@gmail.com</span><button class="copy" id="copy-email" type="button">Copy</button></span></li>
+          <li><span class="lk">LinkedIn</span><a href="https://linkedin.com/in/tariro-kureva" target="_blank" rel="noopener">in/tariro-kureva ↗</a></li>
+          <li><span class="lk">GitHub</span><a href="https://github.com/Tariro-Kureva" target="_blank" rel="noopener">Tariro-Kureva ↗</a></li>
+          <li><span class="lk">Tableau</span><a href="https://public.tableau.com/app/profile/tariro.kureva" target="_blank" rel="noopener">tariro.kureva ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Tariro Kureva</span><span>Hamden, Connecticut</span></div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var cards=document.querySelectorAll('#projects .proj');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      var f=c.getAttribute('data-f');
+      chips.forEach(function(x){x.setAttribute('aria-pressed', x===c ? 'true':'false');});
+      cards.forEach(function(card){
+        card.hidden = !(f==='all' || card.getAttribute('data-cat')===f);
+      });
+    });
+  });
+  var btn=document.getElementById('copy-email');
+  var el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var text=el.textContent;
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy';},1600);}
+    function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy';},1600);}
+    try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+  });
+})();
+</script>
+
+</body></html>
